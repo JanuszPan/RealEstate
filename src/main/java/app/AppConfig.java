@@ -10,7 +10,6 @@ import org.springframework.http.converter.StringHttpMessageConverter;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalEntityManagerFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-
 import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 import org.springframework.web.servlet.LocaleContextResolver;
 import org.springframework.web.servlet.ViewResolver;
@@ -19,7 +18,6 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-
 
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;
@@ -30,11 +28,7 @@ import java.util.Locale;
 
 @Configuration
 @EnableWebMvc
-//@ComponentScan(basePackageClasses = {BookDao.class, BookController.class})
-//@ComponentScan(basePackages = "pl.coderslab.dao", "pl.coderslab.controller")
-//@ComponentScan(basePackages = "Dzien_4_Praca_domowa")
-//@EnableJpaRepositories(basePackageClasses = BookRepository.class)// Spring Data - wystarczy jeden przedstawiciel z pakietu
-@ComponentScan(basePackageClasses = IndexController.class)
+@ComponentScan(basePackageClasses = IndexController.class)// Spring Data - wystarczy jeden przedstawiciel z pakietu
 @EnableTransactionManagement
 public class AppConfig implements WebMvcConfigurer {
 
