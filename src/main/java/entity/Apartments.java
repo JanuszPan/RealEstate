@@ -29,4 +29,11 @@ public class Apartments {
 
     private String parking;
 
+    @Lob //zdjęcia
+    private byte [] image;//w bazie musi być kolumna typu blob
+
+    @ManyToOne
+    private District district;
+
+
 }

@@ -1,6 +1,8 @@
 package app;
 
+import controller.IndexController;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -32,6 +34,7 @@ import java.util.Locale;
 //@ComponentScan(basePackages = "pl.coderslab.dao", "pl.coderslab.controller")
 //@ComponentScan(basePackages = "Dzien_4_Praca_domowa")
 //@EnableJpaRepositories(basePackageClasses = BookRepository.class)// Spring Data - wystarczy jeden przedstawiciel z pakietu
+@ComponentScan(basePackageClasses = IndexController.class)
 @EnableTransactionManagement
 public class AppConfig implements WebMvcConfigurer {
 
