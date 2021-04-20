@@ -13,6 +13,7 @@ public interface ApartmentsRepository extends JpaRepository<Apartments, Long> {
     List<Apartments> findAllByRooms(Apartments rooms);
 
 
+
 }
 
 

@@ -12,9 +12,8 @@
 </head>
 <body>
 <jsp:include page="common/header.jsp"/>
-<!-- kod html -->
-<h1>Strona główna</h1>
 
+<a href="http://obiekt.com/">Szukaj nieruchomości</a>
 
 <%-- ${param.foo} --%>
 <jsp:include page="common/footer.jsp"/>
