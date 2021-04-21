@@ -13,7 +13,9 @@
 <body>
 <jsp:include page="common/header.jsp"/>
 
-<a href="http://obiekt.com/">Szukaj nieruchomości</a>
+<a href="https://www.otodom.pl/">Szukaj nieruchomości</a>
+
+<a href="apartments">Szukaj nieruchomości</a>
 
 <%-- ${param.foo} --%>
 <jsp:include page="common/footer.jsp"/>

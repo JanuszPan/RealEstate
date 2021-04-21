@@ -22,17 +22,20 @@ public class Apartments {
     @Range(min = 1, max = 20)
     private int rooms;
 
-    @Range(min = 1, max = 10)
+    @Range(min = 0, max = 10)
     private int bathrooms;
 
-    private String storey;
+    @Range(min = -2, max = 20)
+    private int storey;
 
     private String parking;
+
+    private boolean lift;
 
     @Size(max = 600)
     private String description;
 
-    private boolean lift;
+
 
     @Lob @Basic(fetch = FetchType.LAZY) //zdjęcia
     private byte [] image;//w bazie musi być kolumna typu blob
