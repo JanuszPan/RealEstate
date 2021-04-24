@@ -17,6 +17,7 @@ public class Voivodeship {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "voivodeship")
     private List<City> city;
+
 }

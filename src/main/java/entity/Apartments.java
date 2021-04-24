@@ -44,4 +44,5 @@ public class Apartments {
     private District district;
 
 
+
 }

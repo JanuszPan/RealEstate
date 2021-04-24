@@ -4,6 +4,7 @@ import controller.IndexController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -18,6 +19,7 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import repository.ApartmentsRepository;
 
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;
@@ -30,6 +32,7 @@ import java.util.Locale;
 @EnableWebMvc
 @ComponentScan(basePackageClasses = IndexController.class)// Spring Data - wystarczy jeden przedstawiciel z pakietu
 @EnableTransactionManagement
+@EnableJpaRepositories(basePackageClasses = ApartmentsRepository.class)
 public class AppConfig implements WebMvcConfigurer {
 
     @Bean

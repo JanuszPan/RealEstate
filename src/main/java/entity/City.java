@@ -18,7 +18,10 @@ public class City {
 
     private String name;
 
-    @OneToMany
+    @OneToMany(mappedBy = "city")
     private List<District> districts=new ArrayList<>();//walidacja
+
+    @ManyToOne
+    private Voivodeship voivodeship;
 
 }

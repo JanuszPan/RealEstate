@@ -8,14 +8,14 @@
 <table>
     <c:forEach items="${apartments}" var="apartments">
         <tr>
-            <td>${apartments.id}</td>
-            <td>${apartments.area}</td>
-            <td>${apartments.rooms}</td>
-            <td>${apartments.bathrooms}</td>
-            <td>${apartments.storey}</td>
-            <td>${apartments.parking}</td>
-            <td>${apartments.lift}</td>
-            <td>${apartments.district.name}</td>
+            <td>${apartments.id}</td><br>
+            <td>${apartments.area}</td><br>
+            <td>${apartments.rooms}</td><br>
+            <td>${apartments.bathrooms}</td><br>
+            <td>${apartments.storey}</td><br>
+            <td>${apartments.parking}</td><br>
+            <td>${apartments.lift}</td><br>
+            <td>${apartments.district.name}</td><br>
 <%--            <td><a href="/form/apartments/delete?id=${apartments.id}">Usuń</a></td>--%>
 <%--            <td><a href="/form/apartments/edit?id=${apartments.id}">Edytuj</a></td>--%>
         </tr>

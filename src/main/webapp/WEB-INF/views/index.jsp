@@ -21,12 +21,13 @@
 <jsp:include page="common/header.jsp"/>
 <%--@elvariable id="apartment" type=""--%>
 <%--@elvariable id="index" type=""--%>
-<form:form method="post" modelAttribute="index">
+<%--@elvariable id="apartament" type=""--%>
+<form:form method="post" modelAttribute="apartament">
     <div class="flex-container">
-       <span> Województwo: <form:select path="voivodeship" items="${voivodeship}" itemLabel="name"
-                                        itemValue="id"/><form:errors path="voivodeship" cssClass="error"/></span>
-        <span>Miasto: <form:select path="city" items="${city}" itemLabel="name" multiple="true"
-                                   itemValue="id"/><form:errors path="city.id" cssClass="error"/></span>
+       <span> Województwo: <form:select path="district.city.voivodeship" items="${voivodeship}" itemLabel="name"
+                                        itemValue="id"/><form:errors path="district.city.voivodeship" cssClass="error"/></span>
+        <span>Miasto: <form:select path="district.city" items="${city}" itemLabel="name" multiple="true"
+                                   itemValue="id"/><form:errors path="district.city" cssClass="error"/></span>
         <span>Dzielnica: <form:select path="district" items="${district}" itemLabel="name" multiple="true"
                                       itemValue="id"/><form:errors path="district" cssClass="error"/></span>
 
@@ -37,10 +38,10 @@
         <span>Łazienki: <form:select path="bathrooms" type="number" min="0" max="10" value="1"/><form:errors
                 path="rooms"
                 cssClass="error"/></span>
-        <span>Piętro: <form:select path="storey"/><form:errors path="storey" cssClass="error"/></span>
-        <span>Parking: <form:select path="parking"/><form:errors path="parking" cssClass="error"/></span>
-        <span>Winda: <form:checkbox path="lift"/><form:errors path="lift" cssClass="error"/></span>
-        <span>Zdjęcia: <form:checkbox path="image"/><form:errors path="image" cssClass="error"/></span>
+<%--        <span>Piętro: <form:select path="storey"/><form:errors path="storey" cssClass="error"/></span>--%>
+<%--        <span>Parking: <form:select path="parking"/><form:errors path="parking" cssClass="error"/></span>--%>
+<%--        <span>Winda: <form:checkbox path="lift"/><form:errors path="lift" cssClass="error"/></span>--%>
+<%--        <span>Zdjęcia: <form:checkbox path="image"/><form:errors path="image" cssClass="error"/></span>--%>
     </div>
     <%--            <td><a href="/apartments/find?id=${apartments.id}">Szukaj</a></td>--%>
     <a href="apartments">Szukaj nieruchomości </a>
