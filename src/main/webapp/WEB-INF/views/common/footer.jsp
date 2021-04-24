@@ -12,8 +12,8 @@
 </head>
 <body>
 <footer>
-    <p>Contact information: <a href="mailto:someone@example.com">
-        someone@example.com</a>.</p>
+    <p>Kontakt: <a href="mailto:biuronieruchomosci@gmail.com">
+        biuronieruchomosci@gmail.com</a>.</p>
 </footer>
 </body>
 </html>

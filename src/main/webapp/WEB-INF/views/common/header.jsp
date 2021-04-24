@@ -8,11 +8,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Strona główna</title>
 </head>
 <body>
 <header>
-    <h1>Most important heading here</h1>
+    <h1>BIURO NIERUCHOMOŚCI</h1>
 </header>
 </body>
 </html>
