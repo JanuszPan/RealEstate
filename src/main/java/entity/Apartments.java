@@ -39,14 +39,19 @@ public class Apartments {
     private String description;
 
     @Lob @Basic(fetch = FetchType.LAZY) //zdjęcia
-    private byte [] image;//w bazie musi być kolumna typu blob
+    private byte [] image;
+
+    @ManyToOne
+    private Voivodeship voivodeship;
+
+    @ManyToOne
+    private City city;
 
     @ManyToOne
     private District district;
 
     @ManyToOne
     private Transaction transaction;
-
 
 
 }

@@ -1,10 +1,13 @@
 insert into real_estate.voivodeship(name) values ('dolnośląskie'), ('kujawsko-pomorskie'), ('lubelskie'), ('lubuskie'),('łódzkie'),('małopolskie'),('mazowieckie'),('opolskie'),('podkarpackie'),('podlaskie'),('pomorskie'),('śląskie'),('świętokrzyskie'),('warmińsko-mazurskie'),('wielkopolskie'),('zachodniopomorskie');
-insert into real_estate.city(name) value ('Kraków');
-insert into real_estate.district(name) value ('Dąbie');
+insert into real_estate.city(name) values ('Wrocław'),('Bydgoszcz'),('Lublin'),('Gorzów Wielkopolski'),('Łódź'),('Kraków'),('Warszawa'),('Opole'),('Rzeszów'),('Białystok'),('Gdańsk'),('Katowice'),('Kielce'),('Olsztyn'),('Poznań'),('Szczecin');
+insert into real_estate.district(name) values ('Śródmieście'),('Krowodrza'),('Podgórze'),('Nowa Huta');
 insert into real_estate.transaction(name) values ('sprzedaż'),('najem'),('dzierżawa');
-insert into real_estate.apartments(price,street,area, bathrooms, description, image, lift, parking, rooms, storey, district_id, transaction_id) values (280000,'Bajeczna',50,1,'Mieszkanie położone na Dąbiu, przy ul. Bajecznej',LOAD_FILE('baj1.jpg'),'brak','brak',1,1,1,1);
+insert into real_estate.apartments(price,street,area, bathrooms, description, image, lift, parking, rooms, storey,voivodeship_id, city_id,district_id, transaction_id) values (280000,'Bajeczna',50,1,'Mieszkanie położone na Dąbiu, przy ul. Bajecznej',LOAD_FILE('baj1.jpg'),'brak','brak',1,1,6,6,1,1);
+insert into real_estate.apartments(price,street,area, bathrooms, description, image, lift, parking, rooms, storey,voivodeship_id, city_id,district_id, transaction_id) values (630000,'Kuźnicy Kołłątajowskiej',90,2,'Mieszkanie położone na Górce Narodowej',LOAD_FILE('kuz1.jpg'),'brak','jest',4,4,6,6,2,1);
+insert into real_estate.apartments(price,street,area, bathrooms, description, image, lift, parking, rooms, storey,voivodeship_id, city_id,district_id, transaction_id) values (579000,'Aleksandry',70,2,'Mieszkanie położone w Bieżanowie',LOAD_FILE('alek1.jpg'),'jest','brak',3,8,6,6,3,1);
+insert into real_estate.apartments(price,street,area, bathrooms, description, image, lift, parking, rooms, storey,voivodeship_id, city_id,district_id, transaction_id) values (469000,'os. Bohaterów Września',54,1,'Mieszkanie położone w Mistrzejowicach',LOAD_FILE('boh1.jpg'),'brak','brak',3,3,6,6,4,1);
 select *from real_estate.voivodeship;
 select *from real_estate.city;
 select *from real_estate.district;
-select *from real_estate.apartments;
+SELECT *FROM real_estate.apartments;
 select *from real_estate.transaction;

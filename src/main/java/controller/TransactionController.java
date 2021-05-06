@@ -8,7 +8,7 @@ import java.util.List;
 public class TransactionController {
     @ModelAttribute("transaction")
     public List<String> checkOptions() {
-        String[] a = new String[] {"sprzedaż", "najem"};
+        String[] a = new String[] {"sprzedaż", "najem", "dzierżawa"};
         return Arrays.asList(a);
     }
 }

@@ -2,14 +2,12 @@ package controller;
 
 import entity.Apartments;
 import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import repository.ApartmentsRepository;
 
 import javax.validation.Valid;
@@ -20,7 +18,7 @@ import java.util.List;
 public class ApartmentsController {
     private final ApartmentsRepository apartmentsRepository;
 
-    //dodawnia mieszkania
+    //dodawanie mieszkania
     @GetMapping(path = "apartments/form", produces = "text/plain;charset=UTF-8")
     String showAddForm(Model model) {
         model.addAttribute("apartments", new Apartments());

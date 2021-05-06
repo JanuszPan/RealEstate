@@ -20,8 +20,6 @@
             <td>${apartments.storey}</td><br>
             <td>${apartments.lift}</td><br>
             <td>${apartments.parking}</td><br>
-            <td><a href="/form/apartments/delete?id=${apartments.id}">Usuń</a></td>
-            <td><a href="/form/apartments/edit?id=${apartments.id}">Edytuj</a></td>
         </tr>
     </c:forEach>
 </table>
