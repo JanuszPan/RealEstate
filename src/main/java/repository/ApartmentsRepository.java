@@ -1,15 +1,24 @@
 package repository;
 
 import entity.Apartments;
+import entity.District;
+import entity.Transaction;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.JpaRepository;
+
 import java.util.List;
 
 public interface ApartmentsRepository extends JpaRepository<Apartments, Long> {
-    Apartments findById(int id);
 
-    //metoda wyszukująca mieszkania dla zadanej liczby pokoi.
+    Apartments findApartmentsById(Long id);
     List<Apartments> findAllByRooms(int rooms);
+    List<Apartments> findAllByArea(int area);
+    List<Apartments> findAllByAreaBetween(int areaMin, int areaMax);
+    List<Apartments> findAllByAreaAfter(int area);
+    List<Apartments> findAllByBathroomsAfter(int number);
+    List<Apartments>findAllByTransaction(Transaction transaction);
+    List<Apartments>findAllByDistrict(District district);
+
 
 }
 

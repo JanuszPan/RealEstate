@@ -12,7 +12,6 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Data
-@NoArgsConstructor
 @Table(name = "user")
 public class User {
     @Id

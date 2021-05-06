@@ -9,7 +9,6 @@ import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor
 @Table(name = "city")
 public class City {
     @Id

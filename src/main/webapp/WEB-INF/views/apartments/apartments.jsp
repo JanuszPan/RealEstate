@@ -6,9 +6,11 @@
 </head>
 <body>
 <table>
+    <%--@elvariable id="apartments" type="java.util.List"--%>
     <c:forEach items="${apartments}" var="apartments">
         <tr>
             <td>${apartments.id}</td><br>
+            <td>${apartments.street}</td><br>
             <td>${apartments.area}</td><br>
             <td>${apartments.rooms}</td><br>
             <td>${apartments.bathrooms}</td><br>

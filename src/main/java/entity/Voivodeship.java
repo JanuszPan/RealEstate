@@ -8,7 +8,6 @@ import java.util.List;
 
 @Entity
 @Data
-@NoArgsConstructor
 @Table(name = "voivodeship")
 public class Voivodeship {
     @Id

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class IndexController {
     @GetMapping(path = "/", produces = "text/html; charset=UTF-8")
     public String hello(Model model) {
-        model.addAttribute("apartament", new Apartments());
+        model.addAttribute("apartments", new Apartments());
         return "index";
     }
 

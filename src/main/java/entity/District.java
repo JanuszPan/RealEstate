@@ -8,7 +8,6 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Data
-@NoArgsConstructor
 @Table(name = "district")
 public class District {
     @Id
