@@ -21,7 +21,7 @@ public class ApartmentsController {
 //    private final ApartmentsDao apartmentsDao;
 
     //dodawanie mieszkania
-    @GetMapping(path = "apartments/add", produces = "text/plain;charset=UTF-8")
+    @GetMapping(path = "apartments/add", produces = "text/html;charset=UTF-8")
     String showAddForm(Model model) {
         model.addAttribute("apartments", new Apartments());
         return "apartments/add";
