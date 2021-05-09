@@ -19,7 +19,6 @@
 </head>
 <body>
 <jsp:include page="common/header.jsp"/>
-<%--@elvariable id="index" type=""--%>
 <%--@elvariable id="apartments" type=""--%>
 <form:form method="post" modelAttribute="apartments">
     <div class="flex-container">

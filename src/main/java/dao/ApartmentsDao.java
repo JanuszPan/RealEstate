@@ -16,17 +16,8 @@ public class ApartmentsDao {
     public void create(Apartments apartment) {
         entityManager.persist(apartment);
     }
-
-    public void update(Apartments apartment) {
-
-        entityManager.merge(apartment);
-    }
-
-    public Apartments findById(long id) {
-
-        return entityManager.find(Apartments.class, id);
-    }
-
+    public void update(Apartments apartment) { entityManager.merge(apartment); }
+    public Apartments findById(long id) { return entityManager.find(Apartments.class, id); }
     public void delete(Apartments apartment) {
         entityManager.remove(entityManager.contains(apartment) ? apartment : entityManager.merge(apartment));
     }

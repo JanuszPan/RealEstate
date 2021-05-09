@@ -22,12 +22,11 @@ public class IndexController {
         model.addAttribute("apartments", new Apartments());
         return "index";
     }
-//    @PostMapping(path = "/apartments", produces = "text/html;charset=UTF-8")
-//    String findAllApartmentsByRooms(@RequestParam("rooms") int rooms, Model model) {
-//        List<Apartments> apartments = apartmentsRepository.findAllByRooms(rooms);
-//        model.addAttribute("rooms", rooms);
-//        return "apartments/apartments";
-//    }
+    @PostMapping(path = "/", produces = "text/html; charset=UTF-8")
+    public String first(Model model) {
+        model.addAttribute("apartments",new Apartments());
+        return "apartments/apartmentsView";
+    }
 
 }
 

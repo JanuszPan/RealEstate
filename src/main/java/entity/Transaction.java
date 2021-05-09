@@ -13,6 +13,6 @@ public class Transaction {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name; //sprzedaż,najem, dzierżawa,
+    private String name; //sprzedaż,najem
 
 }

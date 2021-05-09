@@ -7,19 +7,20 @@
 <body>
 <table>
     <%--@elvariable id="apartments" type="java.util.List"--%>
-    <c:forEach items="${apartments}" var="apartments">
+    <c:forEach items="${apartments}" var="apartment">
         <tr>
-            <td>${apartments.id}</td><br>
-            <td>${apartments.voivodeship.name}</td><br>
-            <td>${apartments.city.name}</td><br>
-            <td>${apartments.district.name}</td><br>
-            <td>${apartments.street}</td><br>
-            <td>${apartments.area}</td><br>
-            <td>${apartments.rooms}</td><br>
-            <td>${apartments.bathrooms}</td><br>
-            <td>${apartments.storey}</td><br>
-            <td>${apartments.lift}</td><br>
-            <td>${apartments.parking}</td><br>
+            <td>${apartment.id}</td><br>
+            <td>${apartment.voivodeship.name}</td><br>
+            <td>${apartment.city.name}</td><br>
+            <td>${apartment.district.name}</td><br>
+            <td>${apartment.street}</td><br>
+            <td>${apartment.area}</td><br>
+            <td>${apartment.rooms}</td><br>
+            <td>${apartment.bathrooms}</td><br>
+            <td>${apartment.storey}</td><br>
+            <td>${apartment.lift}</td><br>
+            <td>${apartment.parking}</td><br>
+            <td>${apartment.description}</td><br>
         </tr>
     </c:forEach>
 </table>
