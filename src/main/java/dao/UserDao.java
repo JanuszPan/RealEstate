@@ -1,6 +1,5 @@
 package dao;
 
-import entity.District;
 import entity.User;
 
 import javax.persistence.EntityManager;

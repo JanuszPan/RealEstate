@@ -8,6 +8,9 @@ insert into real_estate.apartments(price,street,area, bathrooms, description, im
 insert into real_estate.apartments(price,street,area, bathrooms, description, image, lift, parking, rooms, storey,voivodeship_id, city_id,district_id, transaction_id) values (469000,'os. Bohaterów Września',54,1,'Mieszkanie położone w Mistrzejowicach',LOAD_FILE('../boh1.jpg'),'brak','brak',3,3,6,6,4,1);
 insert into real_estate.apartments(price,street,area, bathrooms, description, image, lift, parking, rooms, storey,voivodeship_id, city_id,district_id, transaction_id) values (1200,'Rzeźnicza',26,1,'Mieszkanie do wynajęcia na Grzegórzkach, przy ul. Rzeźniczej',LOAD_FILE('../rzez1.jpg'),'jest','brak',5,1,6,6,1,2);
 insert into real_estate.apartments(price,street,area, bathrooms, description, image, lift, parking, rooms, storey,voivodeship_id, city_id,district_id, transaction_id) values (400000,'Brechta',45,1,'Mieszkanie położone w Warszawie na Pradze',LOAD_FILE('../war1.jpg'),'brak','jest',3,1,7,7,5,1);
+insert into users(username, password, enabled, email) values ('admin','$2a$12$JOg9QO7ZOwxjjoU2XzxiZuuKYi0K7asptCQ.ITNFOGmBWFsY9/y7K',true,'admin@abc.pl'), ('user','$2a$12$t2QhTTeMH61bkgtgJZMqQuTf89tCl4fe9pjNa5Ex2ZxxUt8l.pan6 ',false,'user@abc.pl');;
+insert into authorities(authority) values ('ADMIN'),('USER');
+insert into users_authorities(user_id,authorities_id) values (1,2),(2,1),(2,2);
 select *from real_estate.voivodeship;
 select *from real_estate.city;
 select *from real_estate.district;

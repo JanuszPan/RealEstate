@@ -28,7 +28,7 @@
                                                                       cssClass="error"/></span><br>
         <span>Miasto: <form:select path="district.city" items="${city}" itemLabel="name"
                                    itemValue="id"/><form:errors path="district.city" cssClass="error"/></span><br>
-        <span>Dzielnica: <form:select path="district" items="${district}" itemLabel="name" multiple="true"
+        <span>Dzielnica: <form:select path="district" items="${district}" itemLabel="name"
                                       itemValue="id"/><form:errors path="district" cssClass="error"/></span><br>
         <span>Cena/Czynsz:<form:input path="price" type="number" min="1" max="200000000" value="1"/><form:errors path="price"
                                                                                                   cssClass="error"/></span><br>

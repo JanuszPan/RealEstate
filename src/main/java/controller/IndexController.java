@@ -1,13 +1,15 @@
 package controller;
 
-import entity.Apartments;
-import entity.Voivodeship;
+import entity.*;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import repository.CityRepository;
+import repository.DistrictRepository;
+import repository.TransactionRepository;
 import repository.VoivodeshipRepository;
 
 import java.util.ArrayList;
@@ -21,6 +23,10 @@ public class IndexController {
 //    private final ApartmentsRepository apartmentsRepository;
 
     private final VoivodeshipRepository voivodeshipRepository;
+    private final TransactionRepository transactionRepository;
+    private final CityRepository cityRepository;
+    private final DistrictRepository districtRepository;
+
 
     @GetMapping(path = "/", produces = "text/html; charset=UTF-8")
     public String hello(Model model) {
@@ -33,9 +39,23 @@ public class IndexController {
         return "apartments/apartmentsView";
     }
     @ModelAttribute("voivodeship")
-    public List<Voivodeship> checkOptions() {
+    public List<Voivodeship> checkOptionsVoiv() {
         return voivodeshipRepository.findAll();
     }
 
+    @ModelAttribute("district")
+    public List<District> checkOptionsDistrict() {
+        return districtRepository.findAll();
+    }
+
+    @ModelAttribute("city")
+    public List<City> checkOptionsCity() {
+        return cityRepository.findAll();
+    }
+
+    @ModelAttribute("transaction")
+    public List<Transaction> checkOptionsTrans() {
+        return transactionRepository.findAll();
+    }
 }
 

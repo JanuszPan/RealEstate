@@ -17,7 +17,7 @@ public class City {
 
     private String name;
 
-    @OneToMany(mappedBy = "city")
+    @OneToMany(mappedBy = "city", fetch = FetchType.EAGER)
     private List<District> districts=new ArrayList<>();//walidacja
 
     @ManyToOne
