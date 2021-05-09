@@ -1,5 +1,6 @@
 package controller;
 
+import dao.ApartmentsDao;
 import entity.Apartments;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -17,14 +18,15 @@ import java.util.List;
 @AllArgsConstructor
 public class ApartmentsController {
     private final ApartmentsRepository apartmentsRepository;
+//    private final ApartmentsDao apartmentsDao;
 
     //dodawanie mieszkania
-    @GetMapping(path = "apartments/form", produces = "text/plain;charset=UTF-8")
+    @GetMapping(path = "apartments/add", produces = "text/plain;charset=UTF-8")
     String showAddForm(Model model) {
         model.addAttribute("apartments", new Apartments());
         return "apartments/add";
     }
-    @PostMapping(path = "apartments/form", produces = "text/html;charset=UTF-8")
+    @PostMapping(path = "apartments/add", produces = "text/html;charset=UTF-8")
     String processAddForm(@Valid Apartments apartments, BindingResult bindingResult) {
         if (bindingResult.hasErrors()) {
             return "apartments/add";
@@ -32,20 +34,22 @@ public class ApartmentsController {
         apartmentsRepository.save(apartments);
         return "redirect:/apartments/apartments";
     }
-    //szukanie mieszkania po numerze oferty (id)
-    @GetMapping(path = "/apartments/id", produces = "text/html;charset=UTF-8")
-    String findApartmentByID(@RequestParam("id") Long id, Model model) {
-        Apartments apartments = apartmentsRepository.findApartmentsById(id);
-        model.addAttribute("id", id);
-        return "apartments/apartments";
-    }
 
-    @PostMapping(path = "/apartments/id", produces = "text/html;charset=UTF-8")
-    String findApByID(@RequestParam("id") Long id, Model model) {
-        Apartments apartments = apartmentsRepository.findApartmentsById(id);
-        model.addAttribute("id", id);
-        return "apartments/apartments";
-    }
+    //edytowanie mieszkania
+//    @GetMapping(path = "apartments/edit", produces = "text/plain;charset=UTF-8")
+//    String showEditForm(Model model, @RequestParam long id) {
+//        Apartments apartments = apartmentsRepository.findApartmentsById(id);
+//        model.addAttribute("apartments", apartments);
+//        return "apartments/edit";
+//    }
+//    @PostMapping(path = "apartments/edit", produces = "text/html;charset=UTF-8")
+//    String processEditForm(@Valid Apartments apartments, BindingResult result) {
+//        if (result.hasErrors()) {
+//            return "apartments/edit";
+//        }
+//        apartmentsRepository.save(apartments);
+//        return "redirect:/apartments/apartments";
+//    }
 
     @PostMapping(path = "/apartments", produces = "text/html;charset=UTF-8")
     String findAllApartmentsByRooms(@RequestParam("rooms") int rooms, Model model) {
@@ -53,5 +57,4 @@ public class ApartmentsController {
         model.addAttribute("rooms", rooms);
         return "apartments/apartments";
     }
-
 }

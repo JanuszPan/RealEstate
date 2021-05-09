@@ -1,34 +1,31 @@
 package entity;
-
 import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.pl.PESEL;
-import org.springframework.format.annotation.NumberFormat;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
+@Table(name = "users")
 @Data
-@Table(name = "user")
-public class User {
+public class User implements UserDetails {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotNull
-    @Size(min = 1)
-    private String firstName;
-
-    @NotNull
-    @Size(min = 1)
-    private String lastName;
-
-    @Email
+    @Column(length = 25, unique = true)
+    private String username;
+    @Column(length = 100)
+    private String password;
+    private boolean enabled;
+    @Column(length = 50, unique = true)
     private String email;
-
-    @NumberFormat
-    private int phone;
+    @Transient
+    private boolean accountNonExpired = true;
+    @Transient
+    private boolean accountNonLocked = true;
+    @Transient
+    private boolean credentialsNonExpired = true;
+    @ManyToMany//(fetch = FetchType.EAGER)
+    private List<Authority> authorities = new ArrayList<>();
 }
