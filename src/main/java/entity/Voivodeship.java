@@ -16,7 +16,7 @@ public class Voivodeship {
 
     private String name;
 
-    @OneToMany(mappedBy = "voivodeship")
+    @OneToMany(mappedBy = "voivodeship", fetch = FetchType.EAGER)
     private List<City> city;
 
 }

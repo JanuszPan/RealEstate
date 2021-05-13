@@ -52,6 +52,4 @@ public class Apartments {
 
     @ManyToOne
     private Transaction transaction;
-
-
 }

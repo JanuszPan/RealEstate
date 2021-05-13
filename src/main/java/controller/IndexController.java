@@ -11,8 +11,6 @@ import repository.CityRepository;
 import repository.DistrictRepository;
 import repository.TransactionRepository;
 import repository.VoivodeshipRepository;
-
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

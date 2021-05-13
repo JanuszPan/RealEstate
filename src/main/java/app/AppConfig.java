@@ -89,9 +89,10 @@ public class AppConfig implements WebMvcConfigurer {
             DefaultServletHandlerConfigurer configurer) {
         configurer.enable();
     }
-    @Override
-    public void addViewControllers(ViewControllerRegistry registry) {
-        registry.addViewController("/auth/login").setViewName("auth/login");
-        registry.addViewController("/auth/403page").setViewName("auth/403page");
-    }
+    //SpringSecurity
+//    @Override
+//    public void addViewControllers(ViewControllerRegistry registry) {
+//        registry.addViewController("/auth/login").setViewName("auth/login");
+//        registry.addViewController("/auth/403page").setViewName("auth/403page");
+//    }
 }
