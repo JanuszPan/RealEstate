@@ -97,5 +97,11 @@
             <version>1.18.18</version>
             <scope>provided</scope>
         </dependency>
+<!--        To use CommonsMultipartResolver to handle the file upload, we need to add the following dependency:-->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.4</version>
+        </dependency>
     </dependencies>
 </project>
