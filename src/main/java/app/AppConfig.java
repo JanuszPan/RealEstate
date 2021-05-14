@@ -1,10 +1,12 @@
 package app;
 
 import controller.IndexController;
+import converter.StringToVoivodeshipController;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.format.FormatterRegistry;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.StringHttpMessageConverter;
@@ -95,4 +97,12 @@ public class AppConfig implements WebMvcConfigurer {
 //        registry.addViewController("/auth/login").setViewName("auth/login");
 //        registry.addViewController("/auth/403page").setViewName("auth/403page");
 //    }
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(getPublisherConverter());
+    }
+    @Bean
+    public StringToVoivodeshipController getPublisherConverter() {
+        return new StringToVoivodeshipController();
+    }
 }

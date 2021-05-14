@@ -21,9 +21,9 @@ import java.util.List;
 public class ApartmentsController {
     private final ApartmentsRepository apartmentsRepository;
     private final VoivodeshipRepository voivodeshipRepository;
-    private final TransactionRepository transactionRepository;
     private final CityRepository cityRepository;
     private final DistrictRepository districtRepository;
+    private final TransactionRepository transactionRepository;
 //    private final ApartmentsDao apartmentsDao;
 
     //dodawanie mieszkania
@@ -38,13 +38,15 @@ public class ApartmentsController {
             return "apartments/add";
         }
         apartmentsRepository.save(apartments);
-        return "redirect:/apartments/apartments";
+        return "redirect:/apartments";
     }
-//    @PostMapping(path = "apartments/add", produces = "text/html; charset=UTF-8")
-//    public String first(Model model) {
-//        model.addAttribute("apartments", Arrays.asList(new Apartments()));
-//        return "apartments/apartmentsView";
-//    }
+
+    @GetMapping(path = "apartments", produces = "text/html;charset=UTF-8")
+    String showAllApartments(Model model) {
+        List<Apartments> apartments = apartmentsRepository.findAll();
+        model.addAttribute("apartments", apartments);
+        return "apartments/apartmentsView";
+    }
 
     //edytowanie mieszkania
 //    @GetMapping(path = "apartments/edit", produces = "text/plain;charset=UTF-8")

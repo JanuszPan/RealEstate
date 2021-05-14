@@ -18,7 +18,6 @@ import java.util.List;
 @Controller
 @AllArgsConstructor
 public class IndexController {
-//    private final ApartmentsRepository apartmentsRepository;
 
     private final VoivodeshipRepository voivodeshipRepository;
     private final TransactionRepository transactionRepository;

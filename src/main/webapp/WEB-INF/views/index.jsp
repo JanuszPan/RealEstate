@@ -40,8 +40,7 @@
                 path="rooms"
                 cssClass="error"/></span><br>
         <span>Piętro: <form:input path="storey" type="number" min="-2" max="15" value="0"/><form:errors path="storey" cssClass="error"/></span><br>
-        <span>Parking: <form:select path="parking"/><form:errors path="parking" cssClass="error"/></span><br>
-        <span>Winda: <form:select path="lift"/><form:errors path="lift" cssClass="error"/></span><br><br>
+
         <span>Rodzaj transakcji: <form:select path="transaction" items="${transaction}" itemLabel="name"
                                               itemValue="id"/><form:errors path="transaction" cssClass="error"/></span><br><br>
         <span>Nr oferty: <form:input path="id"/><form:errors path="id" cssClass="error"/></span><br><br>
@@ -49,7 +48,10 @@
     <%--            <td><a href="/apartments/find?id=${apartments.id}">Szukaj</a></td>--%>
     <input type="submit" value="Szukaj"><br><br>
 </form:form>
-<%--<a href="${apartments/add}">Dodaj własną nieruchomość do sprzedaży lub wynajmu</a>&ndash;%&gt;--%>
+<h3>
+    <a href="http://localhost:8080/apartments/add">Dodaj własną nieruchomość do sprzedaży lub wynajmu</a>
+</h3>
+
 <jsp:include page="common/footer.jsp"/>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
