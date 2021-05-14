@@ -14,7 +14,7 @@
 <jsp:include page="../common/header.jsp"/>
 <h1>Add apartment</h1>
 <%--@elvariable id="apartments" type=""--%>
-<form:form method="post" modelAttribute="apartments">
+<form:form method="post" modelAttribute="apartments"><%--enctype="multipart/form-data"--%>
     <div class="flex-container">
         <h2>Wyszukiwarka</h2><br>
         <span> Województwo: <form:select path="district.city.voivodeship.id" items="${voivodeship}" itemLabel="name"
@@ -42,6 +42,7 @@
                                                                            cssClass="error"/></span><br><br>
         <span>Opis nieruchomości: <form:textarea path="description" placeholder="Wstaw opis..."/><form:errors
                 path="description" cssClass="error"/></span><br><br>
+
     </div>
     <input type="submit" value="Dodaj">
 </form:form>
