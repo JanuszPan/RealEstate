@@ -14,10 +14,10 @@
 <%--@elvariable id="apartments" type=""--%>
 <form:form method="post" modelAttribute="apartments">
     <div class="flex-container">
-        <h2>Dodawanie mieszkania</h2><br>
-        <span>Województwo: <form:select path="district.city.voivodeship" items="${voivodeship}" itemLabel="name" itemValue="id"/><form:errors path="district.city.voivodeship" cssClass="error"/></span><br>
-        <span>Miasto: <form:select path="district.city" items="${district.city}" itemLabel="name" itemValue="id"/><form:errors path="district.city" cssClass="error"/></span><br>
-        <span>Dzielnica: <form:input path="district" items="${district}" itemLabel="name" itemValue="id"/><form:errors path="district" cssClass="error"/></span><br>
+        <h2>Edytowanie oferty</h2><br>
+        <span>Województwo: <form:select path="district.city.voivodeship.id" items="${voivodeship}" itemLabel="name" itemValue="id"/><form:errors path="district.city.voivodeship" cssClass="error"/></span><br>
+        <span>Miasto: <form:select path="district.city.id" items="${district.city}" itemLabel="name" itemValue="id"/><form:errors path="district.city" cssClass="error"/></span><br>
+        <span>Dzielnica: <form:input path="district.id" items="${district}" itemLabel="name" itemValue="id"/><form:errors path="district" cssClass="error"/></span><br>
         <span> Ulica: <form:input path="street"/><form:errors path="street" cssClass="error"/></span><br>
         <span>Cena/Czynsz:<form:input path="price" type="number" min="1.0" max="200000000.0"/><form:errors path="area" cssClass="error"/></span><br>
         <span>Powierzchnia:<form:input path="area" type="number" min="1" max="500"/><form:errors path="area" cssClass="error"/></span><br>
@@ -26,8 +26,8 @@
         <span>Piętro: <form:input path="storey"/><form:errors path="storey" cssClass="error"/></span><br>
         <span>Parking: <form:input path="parking"/><form:errors path="parking" cssClass="error"/></span><br>
         <span>Winda: <form:input path="lift"/><form:errors path="lift" cssClass="error"/></span><br><br>
-        <span>Rodzaj transakcji: <form:input path="transaction" items="${transaction}" itemLabel="name" itemValue="id"/><form:errors path="transaction" cssClass="error"/></span><br><br>
-        <span>Opis: <form:input path="description"/><form:errors path="description" cssClass="error"/></span><br>
+        <span>Rodzaj transakcji: <form:input path="transaction.id" items="${transaction}" itemLabel="name" itemValue="id"/><form:errors path="transaction" cssClass="error"/></span><br><br>
+        <span>Opis: <form:textarea path="description"/><form:errors path="description" cssClass="error"/></span><br>
     </div>
     <%--            <td><a href="/apartments/find?id=${apartments.id}">Szukaj</a></td>--%>
     <input type="submit" value="Dodaj">

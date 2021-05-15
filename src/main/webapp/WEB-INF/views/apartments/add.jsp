@@ -11,7 +11,7 @@
     </style>
 </head>
 <body>
-<jsp:include page="../common/header.jsp"/>
+<%--<jsp:include page="../common/header.jsp"/>--%>
 <h1>Add apartment</h1>
 <%--@elvariable id="apartments" type=""--%>
 <form:form method="post" modelAttribute="apartments"><%--enctype="multipart/form-data"--%>
@@ -42,10 +42,14 @@
                                                                            cssClass="error"/></span><br><br>
         <span>Opis nieruchomości: <form:textarea path="description" placeholder="Wstaw opis..."/><form:errors
                 path="description" cssClass="error"/></span><br><br>
+        <tr>
+            <td><form:label path="file">Select a file to upload</form:label></td>
+            <td><input type="file" name="file" /></td>
+        </tr>
 
     </div>
     <input type="submit" value="Dodaj">
 </form:form>
-<jsp:include page="../common/footer.jsp"/>
+<%--<jsp:include page="../common/footer.jsp"/>--%>
 </body>
 </html>

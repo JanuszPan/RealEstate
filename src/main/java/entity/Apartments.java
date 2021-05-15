@@ -2,6 +2,7 @@ package entity;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Range;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
@@ -13,6 +14,9 @@ public class Apartments {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Transient
+    private MultipartFile file;
 
     private String street;
 
@@ -35,7 +39,7 @@ public class Apartments {
 
     private String lift;
 
-    @Size(max = 600)
+    @Size(max = 1200)
     private String description;
 
     @Lob @Basic(fetch = FetchType.LAZY) //zdjęcia

@@ -35,6 +35,7 @@ public class IndexController {
         model.addAttribute("apartments", Arrays.asList(new Apartments()));
         return "apartments/apartmentsView";
     }
+
     @ModelAttribute("voivodeship")
     public List<Voivodeship> checkOptionsVoiv() {
         return voivodeshipRepository.findAll();
