@@ -11,10 +11,10 @@
     </style>
 </head>
 <body>
-<%--<jsp:include page="../common/header.jsp"/>--%>
+<jsp:include page="../common/header.jsp"/>
 <h1>Add apartment</h1>
 <%--@elvariable id="apartments" type=""--%>
-<form:form method="post" modelAttribute="apartments"><%--enctype="multipart/form-data"--%>
+<form:form method="post" modelAttribute="apartments" enctype="multipart/form-data">
     <div class="flex-container">
         <h2>Wyszukiwarka</h2><br>
         <span> Województwo: <form:select path="district.city.voivodeship.id" items="${voivodeship}" itemLabel="name"
@@ -24,6 +24,7 @@
                                    itemValue="id"/><form:errors path="district.city" cssClass="error"/></span><br>
         <span>Dzielnica: <form:select path="district.id" items="${district}" itemLabel="name"
                                       itemValue="id"/><form:errors path="district" cssClass="error"/></span><br>
+        <span>Ulica: <form:input path="street" /><form:errors path="street" cssClass="error"/></span><br>
         <span>Cena/Czynsz:<form:input path="price" type="number" min="1" max="200000000" value="1"/><form:errors
                 path="price"
                 cssClass="error"/></span><br>
@@ -43,13 +44,13 @@
         <span>Opis nieruchomości: <form:textarea path="description" placeholder="Wstaw opis..."/><form:errors
                 path="description" cssClass="error"/></span><br><br>
         <tr>
-            <td><form:label path="file">Select a file to upload</form:label></td>
+            <td><form:label path="file">Dodaj zdjęcie</form:label></td>
             <td><input type="file" name="file" /></td>
         </tr>
 
     </div>
     <input type="submit" value="Dodaj">
 </form:form>
-<%--<jsp:include page="../common/footer.jsp"/>--%>
+<jsp:include page="../common/footer.jsp"/>
 </body>
 </html>

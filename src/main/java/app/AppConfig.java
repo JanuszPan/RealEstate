@@ -110,15 +110,12 @@ public class AppConfig implements WebMvcConfigurer {
         return new StringToVoivodeshipController();
     }
 
-//    This MultipartResolver comes with a series of set method to define properties such as the maximum size for uploads:
-//    @Bean(name = "multipartResolver")
-//    public CommonsMultipartResolver multipartResolver() {
-//        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
-//        multipartResolver.setMaxUploadSize(100000);
-//        return multipartResolver;
-//    }
-    @Bean
-    public StandardServletMultipartResolver multipartResolver() {
-        return new StandardServletMultipartResolver();
+    //    This MultipartResolver comes with a series of set method to define properties such as the maximum size for uploads:
+    @Bean(name = "multipartResolver")
+    public CommonsMultipartResolver multipartResolver() {
+        CommonsMultipartResolver multipartResolver = new CommonsMultipartResolver();
+        multipartResolver.setMaxUploadSize(100000);
+        return multipartResolver;
     }
 }
+
